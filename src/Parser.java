@@ -188,10 +188,8 @@ public class Parser {
                 break;
 
             default:
-                if(!inString) {
-                    System.out.println("ERROR");
-                    System.exit(0);
-                }
+                System.out.println("ERROR");
+                System.exit(0);
                 break;
         }
         return nextToken;
