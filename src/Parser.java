@@ -8,11 +8,9 @@ public class Parser {
     public static int lexLen;
     public static int token;
     public static int nextToken;
-
     public static final int LETTER = 0;
     public static final int DIGIT = 1;
     public static final int UNKNOWN = 99;
-
     public static final int INT_LIT = 10;
     public static final int IDENT = 11;
     public static final int ASSIGN_OP = 20;
@@ -39,6 +37,8 @@ public class Parser {
     public static final int KEYWORD = 41;
     public static final int NEW_LN = 42;
     public static final int CARRIAGE = 43;
+    public static final int BEGINNING =44;
+    public static final int END = 45;
     public static final int EOF = -1;
 
     public static File outFile = new File("output.txt");
@@ -239,7 +239,8 @@ public class Parser {
                 lexeme = lexeme.toLowerCase();
                 if(lexeme.equals("beg") || lexeme.equals("end") || lexeme.equals("fnl") || lexeme.equals("int") || lexeme.equals("dbl") || lexeme.equals("str")
                         || lexeme.equals("flt") || lexeme.equals("boo") || lexeme.equals("inp") || lexeme.equals("han") || lexeme.equals("pnt") || lexeme.equals("if")
-                        || lexeme.equals("el") || lexeme.equals("for") || lexeme.equals("whl") || lexeme.equals("cat") || lexeme.equals("sub") || lexeme.equals("chat")) {
+                        || lexeme.equals("el") || lexeme.equals("for") || lexeme.equals("whl") || lexeme.equals("cat") || lexeme.equals("sub") || lexeme.equals("chat")
+                        || lexeme.equals("beg") || lexeme.equals("end")) {
                     nextToken = KEYWORD;
                 }
                 else{
