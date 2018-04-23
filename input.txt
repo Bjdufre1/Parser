@@ -1,3 +1,5 @@
+beg{
 for(int a = 0; a > 3; a++){
     pnt(a);
 }
+}end
