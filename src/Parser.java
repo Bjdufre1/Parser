@@ -37,6 +37,7 @@ public class Parser {
     public static final int KEYWORD = 41;
     public static final int NEW_LN = 42;
     public static final int CARRIAGE = 43;
+    public static final int COLON = 44;
     public static final int EOF = -1;
 
     public static File outFile = new File("output.txt");
@@ -166,6 +167,11 @@ public class Parser {
                 nextToken = DOUBLE_QUOTE;
                 break;
 
+            case ':':
+                addChar();
+                nextToken = COLON;
+                break;
+
             case '\'':
                 addChar();
                 nextToken = SINGLE_QUOTE;
@@ -182,8 +188,10 @@ public class Parser {
                 break;
 
             default:
-                System.out.println("ERROR");
-                System.exit(0);
+                if(!inString) {
+                    System.out.println("ERROR");
+                    System.exit(0);
+                }
                 break;
         }
         return nextToken;
@@ -269,6 +277,7 @@ public class Parser {
         bufferedWriter.write(nextToken + "\n");
         bufferedWriter.write(lexeme + "\n");
         bufferedWriter.flush();
+        System.out.println("Token: " + nextToken + " lexeme: " + lexeme);
         return nextToken;
     }
 
