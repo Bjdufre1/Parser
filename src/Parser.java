@@ -36,6 +36,7 @@ public class Parser {
     public static final int SINGLE_QUOTE = 40;
     public static final int KEYWORD = 41;
     public static final int NEW_LN = 42;
+    public static final int CARRIAGE = 43;
     public static final int EOF = -1;
 
     public static File outFile = new File("output.txt");
